@@ -1,1 +1,1 @@
-<b>Timer / Clock App using React</b>
+<b>Timer / Countdown App using React</b>
