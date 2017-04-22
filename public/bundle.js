@@ -25565,7 +25565,12 @@
 	          React.createElement(
 	            'li',
 	            { className: 'menu-text' },
-	            'Created by Noa Lea'
+	            'Created by ',
+	            React.createElement(
+	              'a',
+	              { href: 'https://github.com/noalea/', target: '_blank' },
+	              'Noa Lea'
+	            )
 	          )
 	        )
 	      )
