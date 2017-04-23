@@ -25541,7 +25541,7 @@
 	            null,
 	            React.createElement(
 	              IndexLink,
-	              { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { to: '/', activeClassName: 'active-link' },
 	              'Timer'
 	            )
 	          ),
@@ -25550,7 +25550,7 @@
 	            null,
 	            React.createElement(
 	              Link,
-	              { to: '/countdown', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	              { to: '/countdown', activeClassName: 'active-link' },
 	              'Countdown'
 	            )
 	          )
@@ -26015,7 +26015,7 @@
 
 
 	// module
-	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n", ""]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.top-bar .active-link {\n  font-weight: bold; }\n", ""]);
 
 	// exports
 
