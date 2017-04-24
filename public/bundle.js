@@ -108,11 +108,11 @@
 	var Countdown = __webpack_require__(232);
 
 	// Load foundation
-	__webpack_require__(235);
+	__webpack_require__(236);
 	$(document).foundation();
 
 	// App style
-	__webpack_require__(239);
+	__webpack_require__(240);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -25615,6 +25615,7 @@
 	var React = __webpack_require__(8);
 	var Clock = __webpack_require__(233);
 	var CountdownForm = __webpack_require__(234);
+	var Controls = __webpack_require__(235);
 
 	var Countdown = React.createClass({
 	  displayName: 'Countdown',
@@ -25659,7 +25660,8 @@
 	      'div',
 	      null,
 	      React.createElement(Clock, { totalSeconds: count }),
-	      React.createElement(CountdownForm, { onSetCountdown: this.handleSetCountdown })
+	      React.createElement(CountdownForm, { onSetCountdown: this.handleSetCountdown }),
+	      React.createElement(Controls, null)
 	    );
 	  }
 	});
@@ -25756,13 +25758,61 @@
 /* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var Controls = React.createClass({
+	  displayName: 'Controls',
+
+	  propTypes: {
+	    countdownStatus: React.PropTypes.string.isRequired
+	  },
+	  render: function render() {
+	    var countdownStatus = this.props.countdownStatus;
+
+	    var renderStartStopButton = function renderStartStopButton() {
+	      if (countdownStatus == 'started') {
+	        return React.createElement(
+	          'button',
+	          { className: 'button secondary' },
+	          'Pause'
+	        );
+	      } else if (countdownStatus == 'paused') {
+	        return React.createElement(
+	          'button',
+	          { className: 'button primary' },
+	          'Start'
+	        );
+	      }
+	    };
+
+	    return React.createElement(
+	      'div',
+	      { className: 'controls' },
+	      renderStartStopButton(),
+	      React.createElement(
+	        'button',
+	        { className: 'button alert hollow' },
+	        'Clear'
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Controls;
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(236);
+	var content = __webpack_require__(237);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(238)(content, {});
+	var update = __webpack_require__(239)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25779,10 +25829,10 @@
 	}
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(237)();
+	exports = module.exports = __webpack_require__(238)();
 	// imports
 
 
@@ -25793,7 +25843,7 @@
 
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	/*
@@ -25849,7 +25899,7 @@
 
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -26101,16 +26151,16 @@
 
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(240);
+	var content = __webpack_require__(241);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(238)(content, {});
+	var update = __webpack_require__(239)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26127,10 +26177,10 @@
 	}
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(237)();
+	exports = module.exports = __webpack_require__(238)();
 	// imports
 
 
